@@ -1,6 +1,6 @@
 {
   "name": "@toverux/blanc-hopital",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "devDependencies": {
     "@biomejs/biome": "~2.0.4",
     "@types/bun": "^1.2.17",
