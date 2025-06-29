@@ -1,0 +1,18 @@
+{
+  "$schema": "node_modules/@biomejs/biome/configuration_schema.json",
+  "extends": ["biome/formatting.jsonc", "biome/all.jsonc"],
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "defaultBranch": "main",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "includes": [
+      "**",
+      "!package.json",
+      // tsconfigs are JSON5 that must have .json extension, and Biome does not like seeing .json with JSON5 content.
+      "!tsconfig"
+    ]
+  }
+}

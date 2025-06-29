@@ -1,0 +1,69 @@
+{
+  "$schema": "../node_modules/@biomejs/biome/configuration_schema.json",
+  "formatter": {
+    // Behavior
+    "enabled": true,
+    "formatWithErrors": true,
+    "useEditorconfig": true,
+    // Rules
+    "attributePosition": "auto",
+    "bracketSameLine": true,
+    "bracketSpacing": true,
+    "expand": "auto",
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 100
+  },
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "recommended": true,
+      "source": {
+        "recommended": true,
+        "organizeImports": "on",
+        "useSortedAttributes": "off",
+        "useSortedProperties": "off",
+        "useSortedKeys": "off"
+      }
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "enabled": true,
+      "arrowParentheses": "asNeeded",
+      "jsxQuoteStyle": "single",
+      "quoteProperties": "preserve",
+      "quoteStyle": "single",
+      "semicolons": "always",
+      "trailingCommas": "none"
+    }
+  },
+  "json": {
+    "formatter": {
+      "enabled": true,
+      // JSON 5 (.jsonc) does not officially support trailing commas, and tools/editors can be offended by them.
+      "trailingCommas": "none"
+    }
+  },
+  "html": {
+    "formatter": {
+      "enabled": true,
+      "attributePosition": "auto",
+      "indentScriptAndStyle": false,
+      "selfCloseVoidElements": "never",
+      "whitespaceSensitivity": "css"
+    }
+  },
+  "css": {
+    "formatter": {
+      "enabled": true,
+      "quoteStyle": "double"
+    }
+  },
+  "graphql": {
+    "formatter": {
+      "quoteStyle": "double"
+    }
+  }
+}

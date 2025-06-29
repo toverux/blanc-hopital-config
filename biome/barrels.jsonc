@@ -1,0 +1,20 @@
+{
+  "$schema": "../node_modules/@biomejs/biome/configuration_schema.json",
+  "linter": {
+    "rules": {
+      // Disables rules related to build performance optimization.
+      // Only use this in frontend if you have a good tree-shaker, otherwise you might import more than needed.
+      // In backend code or well-tree-shaken builds, this is not an issue except for build times, *potentially*:
+      // https://marvinh.dev/blog/speeding-up-javascript-ecosystem-part-7
+      // So, use only in small/moderate-size projects or if you're sure most files you'll export will be needed.
+      "performance": {
+        // Allow files containing only re-exports.
+        "noBarrelFile": "off",
+        // Allow `import * as ns`.
+        "noNamespaceImport": "off",
+        // Allow `export *`
+        "noReExportAll": "off"
+      }
+    }
+  }
+}

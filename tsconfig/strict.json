@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    // BEHAVIOR options that ensure a stricter and safer setup.
+    "allowJs": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+
+    // EMIT options that ensure a stricter and safer setup.
+    "erasableSyntaxOnly": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+
+    // TYPE options that ensure a stricter and safer setup.
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    // Only option disabled: not really a strictness thing but more a personal preference, and it's not a coincidence if
+    // it collides with Biome's useLiteralKeys when enabled.
+    "noPropertyAccessFromIndexSignature": false,
+    "noUncheckedIndexedAccess": true,
+    "noUncheckedSideEffectImports": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    "useUnknownInCatchVariables": true
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "enableLegacyTemplate": false,
+    // Prevent surprises & help with hydration which can have issues with whitespaces (as of Angular 20).
+    "preserveWhitespaces": false,
+    "strictMetadataEmit": true,
+    "strictStandalone": true,
+    "strictTemplates": true,
+    // Strict templates options that are NOT enabled by default even if strictTemplates is true.
+    "strictInputAccessModifiers": true
+  }
+}

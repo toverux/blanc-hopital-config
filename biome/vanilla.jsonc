@@ -1,0 +1,75 @@
+{
+  "$schema": "../node_modules/@biomejs/biome/configuration_schema.json",
+  "linter": {
+    "rules": {
+      "a11y": {
+        // Save some CPU cycles — I doubt that in 2025 people still use <marquee> and <blink>.
+        "noDistractingElements": "off"
+      },
+      "complexity": {
+        // I must admit that I like it. Used reasonably. Very reasonably.
+        "noCommaOperator": "off",
+        // Learn the language. `void` is a useful operator.
+        // It's also a thing I recommend to tag un-awaited promise-returning functions with (ex. `void this.doAsync()`),
+        // as a way to say "I know I am ignoring a promise here". This also silences the related IJ inspection.
+        "noVoid": "off"
+      },
+      "correctness": {
+        // Default visibility is public. We will tighten that a bit.
+        "noPrivateImports": {
+          "level": "on",
+          "options": {
+            "defaultVisibility": "package"
+          }
+        }
+      },
+      "nursery": {
+        // Buggy at the moment: a biome-ignore inside a function makes another noExcessiveLinesPerFunction ignore
+        // comment for that function non-effective.
+        // // I prefer longer functions rather than too many little functions if it makes sense to have a long function.
+        // // We just raise the limit from 50 to 70, beyond that, yes, it might really be too long.
+        "noExcessiveLinesPerFunction": "off",
+        // Rule seems a bit buggy right now, it is quite aggressive, and its entropy threshold config does not work.
+        "noSecrets": "off",
+        // Off until we can configure it, I'd like to enable it for functions, methods and parameters, but not variables
+        // where it's often a bit overkill.
+        "useExplicitType": "off",
+        // I prefer to avoid putting exports last, as part of the API of the module they should get a place to the top.
+        "useExportsLast": "off"
+      },
+      "style": {
+        // I prefer nesting ternaries reasonably rather than using if-else or other contraptions.
+        "noNestedTernary": "off",
+        // I like using template literals for hardcoded english strings, ex. exception error messages.
+        // This makes spotting them easier, and also it makes it easier to use double or single quotes.
+        "noUnusedTemplateLiteral": "off",
+        // Default is "noPublic" — I find that putting "public" as well is clearer and reminds you what is exposed, and
+        // you don't risk forgetting an accessibility modifier.
+        "useConsistentMemberAccessibility": {
+          "level": "on",
+          "options": {
+            "accessibility": "explicit"
+          }
+        },
+        // I don't like that it forces "===" over "==" on 0, and it doesn't support undefined values.
+        // For example, it thinks `arr?.length > 0` is valid, while in TS it is not, so a simple `arr?.length` would
+        // need to be rewritten to `(arr?.length ?? 0) > 0`.
+        // JS devs are also quite used to visually parse if(bar.length) or if(!bar.length).
+        "useExplicitLengthCheck": "off",
+        // Allow just kebab case over the default that also allows camel case.
+        "useFilenamingConvention": {
+          "level": "on",
+          "options": {
+            "filenameCases": ["kebab-case"]
+          }
+        }
+      },
+      "suspicious": {
+        // Double equal is not THAT bad, although I understand why the rule exists.
+        // If you know the language, you can avoid the pitfalls and even enjoy the benefits of loose equality!
+        // Yep, hot take.
+        "noDoubleEquals": "off"
+      }
+    }
+  }
+}
