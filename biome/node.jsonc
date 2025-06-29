@@ -1,0 +1,16 @@
+{
+  "$schema": "../node_modules/@biomejs/biome/configuration_schema.json",
+  "linter": {
+    // Note that we keep those rules enabled:
+    // - noProcessGlobal: use `import * as process from 'node:process';` instead to help static analysis.
+    // - noProcessEnv: use a config file instead, where you load env vars with process.env and disable the rule just in
+    //   this file.
+    "rules": {
+      "correctness": {
+        // In Node, it makes sense.
+        // In the browser, you want to avoid browserify modules in your bundle...
+        "noNodejsModules": "off"
+      }
+    }
+  }
+}

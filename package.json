@@ -1,0 +1,42 @@
+{
+  "name": "@toverux/blanc-hopital",
+  "version": "0.0.0",
+  "devDependencies": {
+    "@biomejs/biome": "~2.0.4",
+    "@types/bun": "^1.2.17",
+    "lefthook": "^1.11.14"
+  },
+  "optionalDependencies": {
+    "@biomejs/biome": "^2.0.6",
+    "typescript": "^5.8.3"
+  },
+  "exports": {
+    "./biome/all": "./biome/all.jsonc",
+    "./biome/barrels": "./biome/barrels.jsonc",
+    "./biome/formatting": "./biome/formatting.jsonc",
+    "./biome/node": "./biome/node.jsonc",
+    "./biome/vanilla": "./biome/vanilla.jsonc",
+    "./tsconfig/bun": "./tsconfig/bun.json",
+    "./tsconfig/strict": "./tsconfig/strict.json"
+  },
+  "files": [
+    "biome",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "keywords": [
+    "typescript",
+    "tsconfig",
+    "biomejs",
+    "linting",
+    "formatting"
+  ],
+  "packageManager": "bun@1.2.17",
+  "scripts": {
+    "pm:update": "bun upgrade && bunx npm-check-updates -i && bun update",
+    "lint": "biome check",
+    "lint:fix": "biome check --write"
+  },
+  "type": "module"
+}

@@ -1,0 +1,6 @@
+pre-commit:
+  parallel: true
+  jobs:
+    - name: Biome
+      glob: "*.{ts,tsx,js,json}"
+      run: bun biome check --error-on-warnings

@@ -1,0 +1,15 @@
+{
+  "$schema": "../node_modules/@biomejs/biome/configuration_schema.json",
+  "linter": {
+    "rules": {
+      "a11y": "on",
+      "complexity": "on",
+      "correctness": "on",
+      "nursery": "on",
+      "performance": "on",
+      "security": "on",
+      "style": "on",
+      "suspicious": "on"
+    }
+  }
+}
