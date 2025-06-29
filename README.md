@@ -1,5 +1,7 @@
 # @toverux/blanc-hopital
 
+[![NPM Version](https://img.shields.io/npm/v/%40toverux%2Fblanc-hopital)](https://www.npmjs.com/package/@toverux/blanc-hopital)
+
 My coworkers once said I wanted my code as white as hospital walls.
 
 Turns out, it's harder than you might think to get the strictest setup possible, when most tools
@@ -18,6 +20,10 @@ I am watching toolchain releases and reviewing changelogs to check for new optio
 For now, it is not published as separate packages, meaning you cannot upgrade ex. the TypeScript
 config without the Biome config as well. Remember that this repo is using the Unlicense, so feel
 free to just copy what you need.
+
+## Installation
+
+> npm add -D @toverux/blanc-hopital
 
 ## [TypeScript](https://www.typescriptlang.org/tsconfig)
 
