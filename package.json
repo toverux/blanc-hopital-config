@@ -21,6 +21,8 @@
   },
   "files": [
     "biome",
+    "tsconfig",
+    "idea",
     "LICENSE",
     "README.md",
     "CHANGELOG.md"
