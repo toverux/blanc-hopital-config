@@ -29,6 +29,9 @@
         // // I prefer longer functions rather than too many little functions if it makes sense to have a long function.
         // // We just raise the limit from 50 to 70, beyond that, yes, it might really be too long.
         "noExcessiveLinesPerFunction": "off",
+        // The rule is very aggressive in its current iteration.
+        // It flags any number not declared as a const, which in practice is quite invasive.
+        "noMagicNumbers": "off",
         // Rule seems a bit buggy right now, it is quite aggressive, and its entropy threshold config does not work.
         "noSecrets": "off",
         // Off until we can configure it, I'd like to enable it for functions, methods and parameters, but not variables
