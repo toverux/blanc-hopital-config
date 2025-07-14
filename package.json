@@ -2,12 +2,12 @@
   "name": "@toverux/blanc-hopital",
   "version": "1.0.1",
   "devDependencies": {
-    "@biomejs/biome": "~2.0.4",
-    "@types/bun": "^1.2.17",
-    "lefthook": "^1.11.14"
+    "@biomejs/biome": "~2.1.1",
+    "@types/bun": "^1.2.18",
+    "lefthook": "^1.12.2"
   },
   "optionalDependencies": {
-    "@biomejs/biome": "^2.0.6",
+    "@biomejs/biome": "^2.1.1",
     "typescript": "^5.8.3"
   },
   "exports": {
@@ -34,9 +34,9 @@
     "linting",
     "formatting"
   ],
-  "packageManager": "bun@1.2.17",
+  "packageManager": "bun@1.2.18",
   "scripts": {
-    "pm:update": "bun upgrade && bunx npm-check-updates -i && bun update",
+    "pm:update": "mise self-update && mise up --interactive --bump && mise exec bun -- bunx npm-check-updates -i && mise exec bun -- bun update",
     "lint": "biome check",
     "lint:fix": "biome check --write"
   },

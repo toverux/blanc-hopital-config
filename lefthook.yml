@@ -3,4 +3,4 @@ pre-commit:
   jobs:
     - name: Biome
       glob: "*.{ts,tsx,js,json}"
-      run: bun biome check --error-on-warnings
+      run: mise exec bun -- bun biome check --error-on-warnings
