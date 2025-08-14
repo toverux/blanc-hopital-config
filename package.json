@@ -3,12 +3,12 @@
   "version": "1.1.0",
   "devDependencies": {
     "@biomejs/biome": "~2.1.1",
-    "@types/bun": "^1.2.18",
-    "lefthook": "^1.12.2"
+    "@types/bun": "^1.2.20",
+    "lefthook": "^1.12.3"
   },
   "optionalDependencies": {
-    "@biomejs/biome": "^2.1.1",
-    "typescript": "^5.8.3"
+    "@biomejs/biome": "^2.2.0",
+    "typescript": "^5.9.2"
   },
   "exports": {
     "./biome/all": "./biome/all.jsonc",
@@ -34,7 +34,7 @@
     "linting",
     "formatting"
   ],
-  "packageManager": "bun@1.2.18",
+  "packageManager": "bun@1.2.20",
   "scripts": {
     "pm:update": "mise self-update && mise up --interactive --bump && mise exec bun -- bunx npm-check-updates -i && mise exec bun -- bun update",
     "lint": "biome check",
