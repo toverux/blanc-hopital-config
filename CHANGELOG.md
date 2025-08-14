@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.0.0](https://github.com/toverux/blanc-hopital-config/compare/v1.1.0...v2.0.0) (2025-08-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* **readme:** add vue and qwik domains, migrate rules that were in nursery to their new category
+* **all, vanilla:** disable nursery configuration (see readme)
+
+### Features
+
+* **all, vanilla:** disable nursery configuration (see readme) ([09bd67b](https://github.com/toverux/blanc-hopital-config/commit/09bd67b6d6baa29d7c5c99f50f6d2a5830b89150))
+* **package:** upgrade dependencies and Biome to 2.2.0 ([8c7c5db](https://github.com/toverux/blanc-hopital-config/commit/8c7c5db2e15311d555580244d05221ef9db0a287))
+* **readme:** add vue and qwik domains, migrate rules that were in nursery to their new category ([9df9f76](https://github.com/toverux/blanc-hopital-config/commit/9df9f763000565c5d79d90c2fe55a2e2e4afa050))
+
 ## [1.1.0](https://github.com/toverux/blanc-hopital-config/compare/v1.0.1...v1.1.0) (2025-07-14)
 
 
