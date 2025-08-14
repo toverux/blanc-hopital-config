@@ -5,7 +5,6 @@
       "a11y": "on",
       "complexity": "on",
       "correctness": "on",
-      "nursery": "on",
       "performance": "on",
       "security": "on",
       "style": "on",

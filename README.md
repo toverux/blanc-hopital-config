@@ -81,6 +81,10 @@ This allows us to never miss a new rule and be as strict as possible.
 Enabling all rules does not make sense by itself, though, as some rules can contradict each other.
 This is why I recommend enabling the `all` preset, then fine-tune as needed.
 
+> [!NOTE]
+> Due to the high volatility of Biome nursery rules, there are no configurations for nursery rules, to avoid breaking
+> your linting if you happen to have a version mismatch between your project and Blanc Hopital.
+
 Here is a project `biome.jsonc` example.
 
 ```json5
@@ -127,7 +131,8 @@ Here is a project `biome.jsonc` example.
 }
 ```
 
-> Integrating with CI/commit hooks/etc? Use `biome check --error-on-warnings`.
+> [!TIP]
+> **Integrating with CI/commit hooks/etc? Use `biome check --error-on-warnings`.**<br>
 > Keeping rules at their default levels means some will have a warning level. This is fine in the
 > editor where you want some linting issues not screaming at you, but it is an antipattern to commit
 > invalid code.
