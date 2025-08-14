@@ -117,12 +117,15 @@ Here is a project `biome.jsonc` example.
   "linter": {
     // Disable domains you don't need.
     // Don't put "recommended" to keep blanc-hopital activation of all rules.
+    // https://biomejs.dev/linter/domains
     "domains": {
-      "next": "none", // remove this line if not using Next.js.
-      "project": "none", // remove this line unless you really need speed.
-      "react": "none", // remove this line if not using React.
-      "solid": "none", // remove this line if not using Solid.js
-      "test": "none" // remove this line if not using any Jest-like test framework.
+      "next": "none", // remove this line if you use Next.js.
+      "project": "none", // remove this line IF you really need speed.
+      "qwik": "none", // remove this line if you use Qwik.
+      "react": "none", // remove this line if you use React.
+      "solid": "none", // remove this line if you use Solid.js
+      "test": "none", // remove this line if you use any Jest-like test framework.
+      "vue": "none" // remove this line if you use Vue.
     },
     "rules": {
       // ...

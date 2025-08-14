@@ -9,6 +9,14 @@
       "complexity": {
         // I must admit that I like it. Used reasonably. Very reasonably.
         "noCommaOperator": "off",
+        // I prefer longer functions rather than too many little functions if it makes sense to have a long function.
+        // We just raise the limit from 50 to 70, beyond that, yes, it might really be too long.
+        "noExcessiveLinesPerFunction": {
+          "level": "on",
+          "options": {
+            "maxLines": 70
+          }
+        },
         // Learn the language. `void` is a useful operator.
         // It's also a thing I recommend to tag un-awaited promise-returning functions with (ex. `void this.doAsync()`),
         // as a way to say "I know I am ignoring a promise here". This also silences the related IJ inspection.
@@ -24,6 +32,9 @@
         }
       },
       "style": {
+        // The rule is quite aggressive. I prefer to use 'magic numbers' when the intent, the value itself, and/or the
+        // accompanying comment make it clear, rather than bloating the files with constants.
+        "noMagicNumbers": "off",
         // I prefer nesting ternaries reasonably rather than using if-else or other contraptions.
         "noNestedTernary": "off",
         // I like using template literals for hardcoded english strings, ex. exception error messages.
@@ -42,6 +53,8 @@
         // need to be rewritten to `(arr?.length ?? 0) > 0`.
         // JS devs are also quite used to visually parse if(bar.length) or if(!bar.length).
         "useExplicitLengthCheck": "off",
+        // I prefer to avoid putting exports last, as part of the API of the module they should get a place to the top.
+        "useExportsLast": "off",
         // Allow just kebab case over the default that also allows camel case.
         "useFilenamingConvention": {
           "level": "on",
