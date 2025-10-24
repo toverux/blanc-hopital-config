@@ -31,6 +31,17 @@
           }
         }
       },
+      "security": {
+        // The default entropy threshold is 41, which shows a lot of false positives (really).
+        // We will raise it to 70, which will ignore most of the false positives.
+        // The rule still catches actual patterns that are known to be secrets regardless of the entropy level.
+        "noSecrets": {
+          "level": "on",
+          "options": {
+            "entropyThreshold": 70
+          }
+        }
+      },
       "style": {
         // The rule is quite aggressive. I prefer to use 'magic numbers' when the intent, the value itself, and/or the
         // accompanying comment make it clear, rather than bloating the files with constants.
