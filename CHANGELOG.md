@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.1.0](https://github.com/toverux/blanc-hopital-config/compare/v2.0.0...v2.1.0) (2025-10-24)
+
+
+### Features
+
+* upgrade to biome 2.3.0 ([b70ec10](https://github.com/toverux/blanc-hopital-config/commit/b70ec1053a35cb55859d129cc7745e0bb763e55a))
+* **vanilla:** override noSecret to use a threshold of 70 instead of 41 ([61afef5](https://github.com/toverux/blanc-hopital-config/commit/61afef506331044466b464042c8f76a317562682))
+
 ## [2.0.0](https://github.com/toverux/blanc-hopital-config/compare/v1.1.0...v2.0.0) (2025-08-14)
 
 
