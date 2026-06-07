@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.2.0](https://github.com/toverux/blanc-hopital-config/compare/v2.1.0...v2.2.0) (2026-06-07)
+
+
+### Features
+
+* upgrade packages (incl. TypeScript and Biome) ([7145b3a](https://github.com/toverux/blanc-hopital-config/commit/7145b3a71f7e6bf938e1f0330b9c896a934182c1))
+* **vanilla:** style:useNamingConvention: disable strictCase ([7860cb1](https://github.com/toverux/blanc-hopital-config/commit/7860cb1882e387a277ca49a9788e5d3c4dabfab3))
+
 ## [2.1.0](https://github.com/toverux/blanc-hopital-config/compare/v2.0.0...v2.1.0) (2025-10-24)
 
 
