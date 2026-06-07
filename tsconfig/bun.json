@@ -1,6 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  // Inspired from https://bun.sh/docs/typescript#suggested-compileroptions with everything non-specific to Bun removed.
+  // Inspired from https://bun.sh/docs/typescript#suggested-compileroptions with everything
+  // non-specific to Bun removed.
   "compilerOptions": {
     // Environment setup & latest features
     "lib": ["ESNext"],

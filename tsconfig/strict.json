@@ -21,8 +21,8 @@
     "noImplicitOverride": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
-    // Only option disabled: not really a strictness thing but more a personal preference, and it's not a coincidence if
-    // it collides with Biome's useLiteralKeys when enabled.
+    // Only option disabled: not really a strictness thing but more a personal preference, and it's
+    // not a coincidence if it collides with Biome's useLiteralKeys when enabled.
     "noPropertyAccessFromIndexSignature": false,
     "noUncheckedIndexedAccess": true,
     "noUncheckedSideEffectImports": true,
@@ -34,7 +34,7 @@
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "enableLegacyTemplate": false,
-    // Prevent surprises & help with hydration which can have issues with whitespaces (as of Angular 20).
+    // Prevent surprises & help with hydration which can have issues with whitespaces.
     "preserveWhitespaces": false,
     "strictMetadataEmit": true,
     "strictStandalone": true,

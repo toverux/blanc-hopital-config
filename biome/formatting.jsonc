@@ -42,7 +42,8 @@
   "json": {
     "formatter": {
       "enabled": true,
-      // JSON 5 (.jsonc) does not officially support trailing commas, and tools/editors can be offended by them.
+      // JSON 5 (.jsonc) does not officially support trailing commas, and tools/editors can be
+      // offended by them.
       "trailingCommas": "none"
     }
   },

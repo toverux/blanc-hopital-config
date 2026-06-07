@@ -11,7 +11,8 @@
     "includes": [
       "**",
       "!package.json",
-      // tsconfigs are JSON5 that must have .json extension, and Biome does not like seeing .json with JSON5 content.
+      // tsconfigs are JSON5 that must have .json extension, and Biome does not like seeing .json
+      // with JSON5 content.
       "!tsconfig"
     ]
   }

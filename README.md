@@ -13,11 +13,11 @@ configurations from a project to another or comparing TypeScript versions to see
 were available.
 
 So I've created this repo to centralize this work as I'm making it, to reuse it simply, so for now
-there's not much, but it's carefully crafted.
+there's little, but it's carefully crafted.
 
 I am watching toolchain releases and reviewing changelogs to check for new options as they arrive!
 
-For now, it is not published as separate packages, meaning you cannot upgrade ex. the TypeScript
+For now, it is not published as separate packages, meaning you cannot upgrade, e.g., the TypeScript
 config without the Biome config as well. Remember that this repo is using the Unlicense, so feel
 free to just copy what you need.
 
@@ -29,9 +29,11 @@ free to just copy what you need.
 
 ### `strict.json`
 
-Provides one of the strictest TypeScript configurations possible, stricter than [@tsconfig/strictest](https://github.com/tsconfig/bases/blob/main/bases/strictest.json).
+Provides one of the strictest TypeScript configurations possible, stricter than
+[@tsconfig/strictest](https://github.com/tsconfig/bases/blob/main/bases/strictest.json).
 
-Additionally, it embeds the strictest `angularCompilerOptions` in it (if you don't use Angular, that's fine — it won't change anything to TypeScript or make anything slower).
+Additionally, it embeds the strictest `angularCompilerOptions` in it (if you don't use Angular,
+that's fine — it won't change anything to TypeScript or make anything slower).
 
 Example:
 
@@ -82,8 +84,9 @@ Enabling all rules does not make sense by itself, though, as some rules can cont
 This is why I recommend enabling the `all` preset, then fine-tune as needed.
 
 > [!NOTE]
-> Due to the high volatility of Biome nursery rules, there are no configurations for nursery rules, to avoid breaking
-> your linting if you happen to have a version mismatch between your project and Blanc Hopital.
+> Due to the high volatility of Biome nursery rules, there are no configurations for nursery rules,
+> to avoid breaking your linting if you happen to have a version mismatch between your project and
+> Blanc Hopital.
 
 Here is a project `biome.jsonc` example.
 
@@ -93,7 +96,7 @@ Here is a project `biome.jsonc` example.
   "extends": [
     // My curated set of formatting rules — close to industry standards.
     "@toverux/blanc-hopital/biome/formatting",
-    // Enable ALL rules (disable as-needed) (don't let all rules enabled, some can conflict with each other)
+    // Enable ALL rules (disable as-needed)
     "@toverux/blanc-hopital/biome/all",
     // Allow barrel files (index.ts), export * and import *, see module for description.
     "@toverux/blanc-hopital/biome/barrels",
@@ -119,13 +122,20 @@ Here is a project `biome.jsonc` example.
     // Don't put "recommended" to keep blanc-hopital activation of all rules.
     // https://biomejs.dev/linter/domains
     "domains": {
-      "next": "none", // remove this line if you use Next.js.
-      "project": "none", // remove this line IF you really need speed.
-      "qwik": "none", // remove this line if you use Qwik.
-      "react": "none", // remove this line if you use React.
-      "solid": "none", // remove this line if you use Solid.js
-      "test": "none", // remove this line if you use any Jest-like test framework.
-      "vue": "none" // remove this line if you use Vue.
+      // Always recommended for best results:
+      "project": "all",
+      "test": "all",
+      "types": "all",
+      // Enable frameworks you use:
+      "drizzle": "none",
+      "next": "none",
+      "playwright": "none",
+      "qwik": "none",
+      "react": "none",
+      "reactNative": "none",
+      "solid": "all",
+      "turborepo": "none",
+      "vue": "none"
     },
     "rules": {
       // ...
@@ -138,16 +148,19 @@ Here is a project `biome.jsonc` example.
 > **Integrating with CI/commit hooks/etc? Use `biome check --error-on-warnings`.**<br>
 > Keeping rules at their default levels means some will have a warning level. This is fine in the
 > editor where you want some linting issues not screaming at you, but it is an antipattern to commit
-> invalid code.
+> invalid code.<br>
+> Full recommended command:
+> `biome check --error-on-warnings --no-errors-on-unmatched --files-ignore-unknown=true {staged_files}`
+> (`staged_files` is a lefthook feature).
 
 ## [JetBrains IDEs](https://www.jetbrains.com/help/idea/configuring-code-style.html)
 
 [idea/Project.xml](https://github.com/toverux/blanc-hopital-config/tree/main/idea/Project.xml) is a
-JetBrains IDEA code style configuration file that can be imported and shared into a project (do not gitignore your
-.idea folder!).
+JetBrains IDEA code style configuration file that can be imported and shared into a project (do not
+gitignore your .idea folder!).
 
-This config is complimentary to formatter/linter options and allows introducing (but not enforcing) other fine-grained
-preferences you might have into your project.
+This config is complimentary to formatter/linter options and allows introducing (but not enforcing)
+other fine-grained preferences you might have into your project.
 
 To import it best is to use the UI: `Settings › Editor › Code Style › Scheme › Import Scheme...`
 Then select the file, import it. Click on the cog icon again and select `Copy to Project...`.
