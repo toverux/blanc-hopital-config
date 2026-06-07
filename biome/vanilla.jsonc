@@ -78,6 +78,15 @@
           "options": {
             "filenameCases": ["kebab-case"]
           }
+        },
+        "useNamingConvention": {
+          "level": "on",
+          "options": {
+            // Sounds good in theory but generally annoying.
+            // For example, TValue or UIGallery, which are perfectly legible to the trained eye, get
+            // flagged. There are
+            "strictCase": false
+          }
         }
       },
       "suspicious": {
