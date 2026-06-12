@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.0](https://github.com/toverux/blanc-hopital-config/compare/v2.3.0...v2.4.0) (2026-06-12)
+
+
+### Features
+
+* **biome/vanilla:** disable lint/style/noContinue ([698e831](https://github.com/toverux/blanc-hopital-config/commit/698e831a465018af0973ba1683827b1fc2c62bfe))
+
 ## [2.3.0](https://github.com/toverux/blanc-hopital-config/compare/v2.2.0...v2.3.0) (2026-06-12)
 
 
