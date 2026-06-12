@@ -56,6 +56,8 @@
         // messages. This makes spotting them easier, and also it makes it easier to use double or
         // single quotes.
         "noUnusedTemplateLiteral": "off",
+        // I like ternaries. Most people like ternaries.
+        "noTernary": "off",
         // Default is "noPublic" — I find that putting "public" as well is clearer and reminds you
         // what is exposed, and you don't risk forgetting an accessibility modifier.
         "useConsistentMemberAccessibility": {
