@@ -95,7 +95,10 @@
         // Double equal is not THAT bad, although I understand why the rule exists.
         // If you know the language, you can avoid the pitfalls and even enjoy the benefits of loose
         // equality! Yep, hot take.
-        "noDoubleEquals": "off"
+        "noDoubleEquals": "off",
+        // In the same vein as `noDoubleEquals`, I know it's completely a JavaScript quirk,
+        // but one I learned to like and use properly.
+        "noEqualsToNull": "off"
       }
     }
   }
