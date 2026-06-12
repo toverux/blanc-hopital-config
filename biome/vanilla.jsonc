@@ -56,9 +56,11 @@
             "maxLines": 600
           }
         },
-        // The rule is quite aggressive. I prefer to use 'magic numbers' when the intent, the value
-        // itself, and/or the accompanying comment make it clear, rather than bloating the file
-        // with constants.
+        // Don't really want to drop continue.
+        "noContinue": "off",
+        // The rule is quite aggressive. I prefer to use 'magic numbers' when the intent, or the
+        // value itself, and/or the accompanying comment, make it clear, rather than bloating the
+        // file with constants.
         "noMagicNumbers": "off",
         // I prefer nesting ternaries reasonably rather than using if-else or other contraptions.
         "noNestedTernary": "off",
