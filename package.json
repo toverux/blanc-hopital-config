@@ -1,6 +1,6 @@
 {
   "name": "@toverux/blanc-hopital",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "type": "module",
   "scripts": {
     "// We use mise-en-place to manage tasks. See mise.toml for more info.": ""

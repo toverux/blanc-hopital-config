@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.3.0](https://github.com/toverux/blanc-hopital-config/compare/v2.2.0...v2.3.0) (2026-06-12)
+
+
+### Features
+
+* **biome/vanilla:** bump lint/style/noExcessiveLinesPerFile's maxLines from 300 to 600 ([c3f5ae7](https://github.com/toverux/blanc-hopital-config/commit/c3f5ae7384fe75bedf9cf9d85f20e8bb66398c31))
+* **biome/vanilla:** disable lint/style/noTernary ([688ce12](https://github.com/toverux/blanc-hopital-config/commit/688ce1267be6231ff1ce8ec4910a01683d57a6b3))
+* **biome/vanilla:** disable lint/suspicious/noEqualsToNull ([d78fdef](https://github.com/toverux/blanc-hopital-config/commit/d78fdefd9034bdb1201b08e1493d98bb65923c33))
+* **package:** bump Biome to ^2.5.0 ([8fe20d0](https://github.com/toverux/blanc-hopital-config/commit/8fe20d00d305ea42281dc4466b95c96cb2095809))
+
 ## [2.2.0](https://github.com/toverux/blanc-hopital-config/compare/v2.1.0...v2.2.0) (2026-06-07)
 
 
