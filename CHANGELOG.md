@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.0](https://github.com/toverux/blanc-hopital-config/compare/v2.4.0...v2.5.0) (2026-06-12)
+
+
+### Features
+
+* **biome/vanilla:** disable lint/complexity/noUselessUndefined ([1f1230f](https://github.com/toverux/blanc-hopital-config/commit/1f1230f6dafc31a5c490ce516b8c4411ede65d1d))
+
 ## [2.4.0](https://github.com/toverux/blanc-hopital-config/compare/v2.3.0...v2.4.0) (2026-06-12)
 
 
