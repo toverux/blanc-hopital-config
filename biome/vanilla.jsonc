@@ -46,6 +46,16 @@
         }
       },
       "style": {
+        // Default is 300, which is way too low in many serious projects.
+        // Splitting into too many files is not always a good idea, much like for functions.
+        // However, past ~600 lines, there might be an actual problem, or it's at least worth a
+        // suppression comment with an explanation.
+        "noExcessiveLinesPerFile": {
+          "level": "on",
+          "options": {
+            "maxLines": 600
+          }
+        },
         // The rule is quite aggressive. I prefer to use 'magic numbers' when the intent, the value
         // itself, and/or the accompanying comment make it clear, rather than bloating the file
         // with constants.
