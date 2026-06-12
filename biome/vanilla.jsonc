@@ -18,6 +18,9 @@
             "maxLines": 70
           }
         },
+        // Conflicts with TypeScript's "Not all code paths return a value" when a function can
+        // explicitly return undefined, and I like being explicit.
+        "noUselessUndefined": "off",
         // Learn the language. `void` is a useful operator.
         // It's also a thing I recommend tagging un-awaited promise-returning functions with
         // (ex. `void this.doAsync()`), as a way to say "I know I am ignoring a promise here".
