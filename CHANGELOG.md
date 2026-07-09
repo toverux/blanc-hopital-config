@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.0](https://github.com/toverux/blanc-hopital-config/compare/v2.5.0...v3.0.0) (2026-07-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* **biome, oxfmt, oxlint:** remove Biome support, switch to oxfmt & oxlint
+
+### Features
+
+* **biome, oxfmt, oxlint:** remove Biome support, switch to oxfmt & oxlint ([3bca863](https://github.com/toverux/blanc-hopital-config/commit/3bca8638ece9e8d5ea68dd75c1bce2b5f5f4a553))
+
 ## [2.5.0](https://github.com/toverux/blanc-hopital-config/compare/v2.4.0...v2.5.0) (2026-06-12)
 
 
