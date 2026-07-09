@@ -21,8 +21,7 @@
     "noImplicitOverride": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
-    // Only option disabled: not really a strictness thing but more a personal preference, and it's
-    // not a coincidence if it collides with Biome's useLiteralKeys when enabled.
+    // Only option disabled: not really a strictness thing but more a personal preference.
     "noPropertyAccessFromIndexSignature": false,
     "noUncheckedIndexedAccess": true,
     "noUncheckedSideEffectImports": true,

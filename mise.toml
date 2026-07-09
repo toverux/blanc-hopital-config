@@ -12,3 +12,14 @@ run = [
   # make sure transitive dependencies are updated & deduplicated
   "mise exec bun -- bun update"
 ]
+
+[tasks."check"]
+raw = true
+run = ["bun --bun tsc --noEmit", "bun --bun oxfmt", "bun --bun oxlint --fix"]
+
+[tasks."build"]
+raw = true
+run = [
+  "bun --bun tsc",
+  "rm -f oxlint.config.js oxlint.config.d.ts oxfmt.config.js oxfmt.config.d.ts"
+]

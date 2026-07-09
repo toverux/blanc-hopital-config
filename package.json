@@ -1,41 +1,63 @@
 {
   "name": "@toverux/blanc-hopital",
   "version": "2.5.0",
-  "type": "module",
-  "scripts": {
-    "// We use mise-en-place to manage tasks. See mise.toml for more info.": ""
-  },
-  "devDependencies": {
-    "@biomejs/biome": "^2.4.16",
-    "@types/bun": "^1.3.14",
-    "lefthook": "^2.1.9"
-  },
-  "optionalDependencies": {
-    "@biomejs/biome": "^2.5.0",
-    "typescript": "^6.0.3"
-  },
-  "exports": {
-    "./biome/all": "./biome/all.jsonc",
-    "./biome/barrels": "./biome/barrels.jsonc",
-    "./biome/formatting": "./biome/formatting.jsonc",
-    "./biome/node": "./biome/node.jsonc",
-    "./biome/vanilla": "./biome/vanilla.jsonc",
-    "./tsconfig/bun": "./tsconfig/bun.json",
-    "./tsconfig/strict": "./tsconfig/strict.json"
-  },
-  "files": [
-    "biome",
+  "keywords": [
+    "formatting",
+    "linting",
+    "oxc",
+    "oxfmt",
+    "oxlint",
     "tsconfig",
+    "typescript"
+  ],
+  "files": [
     "idea",
+    "oxfmt",
+    "oxlint",
+    "tsconfig",
     "LICENSE",
     "README.md",
     "CHANGELOG.md"
   ],
-  "keywords": [
-    "typescript",
-    "tsconfig",
-    "biomejs",
-    "linting",
-    "formatting"
-  ]
+  "type": "module",
+  "exports": {
+    "./oxfmt": {
+      "import": "./oxfmt/default.js",
+      "types": "./oxfmt/default.d.ts"
+    },
+    "./oxlint/agnostic": {
+      "import": "./oxlint/agnostic.js",
+      "types": "./oxlint/agnostic.d.ts"
+    },
+    "./oxlint/all": {
+      "import": "./oxlint/all.js",
+      "types": "./oxlint/all.d.ts"
+    },
+    "./oxlint/react": {
+      "import": "./oxlint/react.js",
+      "types": "./oxlint/react.d.ts"
+    },
+    "./oxlint/react-perf-relaxed": {
+      "import": "./oxlint/react-perf-relaxed.js",
+      "types": "./oxlint/react-perf-relaxed.d.ts"
+    },
+    "./tsconfig/bun": "./tsconfig/bun.json",
+    "./tsconfig/strict": "./tsconfig/strict.json"
+  },
+  "scripts": {
+    "// We use mise-en-place to manage tasks. See mise.toml for more info.": ""
+  },
+  "devDependencies": {
+    "@types/bun": "^1.3.14",
+    "lefthook": "^2.1.9",
+    "oxfmt": "^0.57.0",
+    "oxlint": "^1.72.0",
+    "oxlint-tsgolint": "^0.24.0"
+  },
+  "optionalDependencies": {
+    "oxfmt": "^0.57.0",
+    "oxlint": "^1.72.0",
+    "oxlint-tsgolint": "^0.24.0",
+    "typescript": "^6.0.3"
+  }
 }

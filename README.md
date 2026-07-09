@@ -18,7 +18,7 @@ there's little, but it's carefully crafted.
 I am watching toolchain releases and reviewing changelogs to check for new options as they arrive!
 
 For now, it is not published as separate packages, meaning you cannot upgrade, e.g., the TypeScript
-config without the Biome config as well. Remember that this repo is using the Unlicense, so feel
+config without the Oxlint config as well. Remember that this repo is using the Unlicense, so feel
 free to just copy what you need.
 
 ## Installation
@@ -37,7 +37,7 @@ that's fine — it won't change anything to TypeScript or make anything slower).
 
 Example:
 
-```json5
+```json
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": ["@toverux/blanc-hopital/tsconfig/strict"],
@@ -59,99 +59,117 @@ Provides a sensible set of options when executing TypeScript directly under [Bun
 
 Inspired from [Bun › TypeScript › Suggested `compilerOptions`](https://bun.sh/docs/typescript#suggested-compileroptions).
 
-```json5
+```json
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": [
-    "@toverux/blanc-hopital/tsconfig/strict",
-    "@toverux/blanc-hopital/tsconfig/bun"
-  ],
+  "extends": ["@toverux/blanc-hopital/tsconfig/strict", "@toverux/blanc-hopital/tsconfig/bun"],
   "compilerOptions": {
     // ...
   }
 }
 ```
 
-## [Biome](https://biomejs.dev)
+## [Oxfmt](https://oxc.rs/docs/guide/usage/formatter)
 
-Various Biome configurations are available.
+A single, curated set of formatting options. Close to industry standards, with a few opinionated
+tweaks: single quotes, no trailing commas, `lf` line endings, avoided arrow-function parentheses,
+import sorting (no blank lines between groups), and refined JSDoc formatting.
 
-Contrarily to the philosophy of Biome (which aims to have sensible defaults), we will enable *all*
-Biome rules by default and disabled/fine-tune them as needed.
-This allows us to never miss a new rule and be as strict as possible.
+### Example
 
-Enabling all rules does not make sense by itself, though, as some rules can contradict each other.
-This is why I recommend enabling the `all` preset, then fine-tune as needed.
+Here is a project `oxfmt.config.ts` example.
 
-> [!NOTE]
-> Due to the high volatility of Biome nursery rules, there are no configurations for nursery rules,
-> to avoid breaking your linting if you happen to have a version mismatch between your project and
-> Blanc Hopital.
+```ts
+import { defineConfig } from 'oxfmt';
+import config from '@toverux/blanc-hopital/oxfmt';
 
-Here is a project `biome.jsonc` example.
-
-```json5
-{
-  "$schema": "node_modules/@biomejs/biome/configuration_schema.json",
-  "extends": [
-    // My curated set of formatting rules — close to industry standards.
-    "@toverux/blanc-hopital/biome/formatting",
-    // Enable ALL rules (disable as-needed)
-    "@toverux/blanc-hopital/biome/all",
-    // Allow barrel files (index.ts), export * and import *, see module for description.
-    "@toverux/blanc-hopital/biome/barrels",
-    // My curated set of rules for JavaScript/CSS/HTML/GraphQL.
-    "@toverux/blanc-hopital/biome/vanilla",
-    // My curated set of rules for a Node-compatible environment.
-    "@toverux/blanc-hopital/biome/node"
-  ],
-  // Example, adapt as needed.
-  "files": {
-    "includes": ["**", "!package.json"]
-  },
-  // Recommended you enable Git integration.
-  "vcs": {
-    "enabled": true,
-    "clientKind": "git",
-    "defaultBranch": "main",
-    "useIgnoreFile": true
-  },
-  // Now override with your own rules.
-  "linter": {
-    // Disable domains you don't need.
-    // Don't put "recommended" to keep blanc-hopital activation of all rules.
-    // https://biomejs.dev/linter/domains
-    "domains": {
-      // Always recommended for best results:
-      "project": "all",
-      "test": "all",
-      "types": "all",
-      // Enable frameworks you use:
-      "drizzle": "none",
-      "next": "none",
-      "playwright": "none",
-      "qwik": "none",
-      "react": "none",
-      "reactNative": "none",
-      "solid": "all",
-      "turborepo": "none",
-      "vue": "none"
-    },
-    "rules": {
-      // ...
-    }
-  }
-}
+export default defineConfig({
+  ...config,
+  // Override or extend with your own options.
+  ignorePatterns: ['generated-file.ts']
+});
 ```
 
 > [!TIP]
-> **Integrating with CI/commit hooks/etc? Use `biome check --error-on-warnings`.**<br>
-> Keeping rules at their default levels means some will have a warning level. This is fine in the
-> editor where you want some linting issues not screaming at you, but it is an antipattern to commit
-> invalid code.<br>
-> Full recommended command:
-> `biome check --error-on-warnings --no-errors-on-unmatched --files-ignore-unknown=true {staged_files}`
-> (`staged_files` is a lefthook feature).
+> **Integrating with CI/commit hooks/etc? Use `oxfmt --check`.**<br>
+> By default `oxfmt` rewrites files in place; `--check` instead exits non-zero when a file isn't
+> already formatted, without touching it. Add `--no-error-on-unmatched-pattern` when feeding it a
+> filtered list of staged files.
+
+## [Oxlint](https://oxc.rs/docs/guide/usage/linter)
+
+### Philosophy
+
+The philosophy: we enable _all_ rules by default and disable/fine-tune as needed, so you never miss
+a new rule and stay as strict as possible.
+
+Oxlint has no single "all" switch, because enabling rules is two orthogonal things:
+turning on **plugins** (a rule only applies if its plugin is enabled) and turning on **categories**
+(`correctness`, `suspicious`, `perf`, `style`, `pedantic`, `restriction`, `nursery`).
+
+Hence, the setup is split into two kinds of configs:
+
+- **`all`**: enables every _base_ plugin (`typescript`, `unicorn`, `oxc`, `import`, `jsdoc`,
+  `promise`, `node`) and every category.
+  It is completely generic and does one job only: enabling all rules.
+- **One config per framework/environment plugin**: `react`, `nextjs`, `vitest`, etc.
+  Contrarily to `all`, these bring opinionated defaults specific to Blanc Hopital.
+  Add only the ones you use. Their severities are inherited from `all`.
+
+> [!TIP]
+> **Integrating with CI/commit hooks/etc? Use `oxlint --deny-warnings`.**<br>
+> Stylistic rules are kept at warning level: fine in the editor where you don't want them screaming
+> at you, but an antipattern to commit. `--deny-warnings` makes warning-level violations exit
+> non-zero.
+
+> [!NOTE]
+> Due to the high volatility of nursery rules, the `nursery` category is left off, to avoid breaking
+> your linting if you happen to have a version mismatch between your project and Blanc Hopital.
+> Opt in to nursery rules individually.
+
+> [!NOTE]
+> The `restriction` category bans specific patterns/features, and many of its rules are mutually
+> exclusive by design — expect to disable a good chunk of them.
+
+### Severities
+
+The `all` config is the one that defines severities for every category.
+
+Severities are graded rather than uniform, because an Oxlint category forces a single severity onto
+all of its rules (there is no "keep each rule's default level" toggle):
+
+- **`correctness` and `suspicious`** are errors: code that is definitely or most likely wrong.
+- **`perf`, `style`, `pedantic` and `restriction`** are warnings: opinionated/stylistic rules you
+  don't want screaming in the editor.
+
+### Example
+
+Here is a project `oxlint.config.ts` example.
+
+```ts
+import { defineConfig } from 'oxlint';
+// Enable ALL rules for the base plugins (disable/fine-tune as needed).
+import all from '@toverux/blanc-hopital/oxlint/all';
+// Add the framework/environment plugins you use.
+import react from '@toverux/blanc-hopital/oxlint/react';
+
+export default defineConfig({
+  extends: [all, react],
+  // Now override with your own rules, these win over the categories enabled above.
+  rules: {
+    // ...
+  }
+});
+```
+
+### Available configurations
+
+| Configuration        | Description                                                                                                                           |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| `all`                | Enables all base plugins and every category with severity gradation.                                                                  |
+| `agnostic`           | Blanc-Hopital opinionated defaults for any JavaScript project. Enables oxlint type awareness, requires npm package `oxlint-tsgolint`. |
+| `react`              | Enables the `react` and `jsx-a11y` plugins, with Blanc-Hopital opinionated defaults.                                                  |
+| `react-perf-relaxed` | Enabled the `react-perf` plugin, but disables the most aggressive rules.                                                              |
 
 ## [JetBrains IDEs](https://www.jetbrains.com/help/idea/configuring-code-style.html)
 
