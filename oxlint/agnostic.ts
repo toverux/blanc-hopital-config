@@ -84,6 +84,9 @@ export default defineConfig({
     // chances to shoot yourself in the foot.
     'no-use-before-define': 'off',
     'no-void': 'off',
+    // Merges every `const` of a scope into a single statement, which costs the blank lines that
+    // separate an assignment from its usage. One declaration per binding reads better.
+    'one-var': 'off',
     // Redundant with oxfmt handling imports.
     'sort-imports': 'off',
     'sort-keys': 'off',
@@ -119,6 +122,11 @@ export default defineConfig({
     'jsdoc/require-returns-type': 'off',
     // TypeScript has the type, DRY.
     'jsdoc/require-yields-type': 'off',
+
+    // [ NODE RULES ]
+    // Top-level `await` only bites a module loaded through `require(esm)`, which is a rare way to
+    // reach an ESM module now, and never how a script or a bundled entrypoint is loaded.
+    'node/no-top-level-await': 'off',
 
     // [ OXC RULES ]
     'oxc/no-async-await': 'off',
