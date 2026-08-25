@@ -1,5 +1,5 @@
 [tools]
-bun = "1.3.14"
+bun = "1.4.0"
 
 [tasks."dev:deps-upgrade"]
 description = "Upgrades mise-en-place, proposes upgrades for tools managed by mise, and proposes upgrades for package.json dependencies."
@@ -19,7 +19,4 @@ run = ["bun --bun tsc --noEmit", "bun --bun oxfmt", "bun --bun oxlint --fix"]
 
 [tasks."build"]
 raw = true
-run = [
-  "bun --bun tsc",
-  "rm -f oxlint.config.js oxlint.config.d.ts oxfmt.config.js oxfmt.config.d.ts"
-]
+run = ["bun --bun tsc", "rm -f oxlint.config.js oxfmt.config.js"]

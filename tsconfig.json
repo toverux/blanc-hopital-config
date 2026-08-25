@@ -3,6 +3,9 @@
   "extends": "./tsconfig/strict.json",
   "compilerOptions": {
     "incremental": false,
-    "declaration": true
+    // No declarations: `exports.types` points consumers at the sources themselves. They carry the
+    // comments an editor navigates to, and they type-check against the consumer's own oxfmt and
+    // oxlint, so the types can never describe a different version than the one installed.
+    "declaration": false
   }
 }

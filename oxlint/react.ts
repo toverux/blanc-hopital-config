@@ -14,10 +14,16 @@ export default defineConfig({
     'react/no-danger': 'off',
     // Forbids setting className and style, but TypeScript as our back.
     'react/forbid-component-props': 'off',
+    // Cannot classify a component wrapped in `memo()` or `forwardRef()`, and asks for whichever
+    // form it is not: every option value just changes the complaint.
+    'react/function-component-definition': 'off',
     // I prefer not to encourage useless splitting.
     'react/jsx-max-depth': 'off',
     'react/jsx-props-no-spreading': 'off',
     // Handled by TypeScript and I always use TypeScript.
-    'react/react-in-jsx-scope': 'off'
+    'react/react-in-jsx-scope': 'off',
+    // Flags the suppression of any other React rule, so every deliberate one costs a second
+    // warning that can only be silenced by suppressing this rule too.
+    'react/rule-suppression': 'off'
   }
 });
