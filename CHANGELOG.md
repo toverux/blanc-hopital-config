@@ -1,5 +1,16 @@
 # Changelog
 
+## [4.0.0](https://github.com/toverux/blanc-hopital-config/compare/v3.0.0...v4.0.0) (2026-08-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* **oxlint, oxfmt:** oxlint 1.75 raised its `oxlint-tsgolint` peer floor to >=7.0.2001, so consumers pinning the older tsgolint must move with it. Consumers also type-check the package's sources now, which `skipLibCheck` does not skip, where before they read declaration files that it did.
+
+### Features
+
+* **oxlint, oxfmt:** update to oxlint 1.80, oxfmt 0.65, tsgolint 7.0.2001 ([#12](https://github.com/toverux/blanc-hopital-config/issues/12)) ([dfb3832](https://github.com/toverux/blanc-hopital-config/commit/dfb3832eb2339d1696490c3984773af65c810f99))
+
 ## [3.0.0](https://github.com/toverux/blanc-hopital-config/compare/v2.5.0...v3.0.0) (2026-07-09)
 
 
