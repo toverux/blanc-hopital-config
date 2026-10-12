@@ -1,5 +1,16 @@
 # Changelog
 
+## [5.0.0](https://github.com/toverux/blanc-hopital-config/compare/v4.0.0...v5.0.0) (2026-10-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* **tsconfig:** update to TypeScript 7.0.2
+
+### Features
+
+* **tsconfig:** update to TypeScript 7.0.2 ([39ed1c4](https://github.com/toverux/blanc-hopital-config/commit/39ed1c401b2e6ecb049f2ae196eb70d6370f4af1))
+
 ## [4.0.0](https://github.com/toverux/blanc-hopital-config/compare/v3.0.0...v4.0.0) (2026-08-25)
 
 
