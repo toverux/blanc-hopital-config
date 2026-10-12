@@ -10,6 +10,10 @@
     "tsconfig",
     "typescript"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toverux/blanc-hopital-config.git"
+  },
   "files": [
     "idea",
     "oxfmt",
