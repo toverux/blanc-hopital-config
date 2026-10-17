@@ -80,8 +80,8 @@ import sorting (no blank lines between groups), and refined JSDoc formatting.
 Here is a project `oxfmt.config.ts` example.
 
 ```ts
-import { defineConfig } from 'oxfmt';
 import config from '@toverux/blanc-hopital/oxfmt';
+import { defineConfig } from 'oxfmt';
 
 export default defineConfig({
   ...config,
@@ -147,11 +147,11 @@ all of its rules (there is no "keep each rule's default level" toggle):
 Here is a project `oxlint.config.ts` example.
 
 ```ts
-import { defineConfig } from 'oxlint';
 // Enable ALL rules for the base plugins (disable/fine-tune as needed).
 import all from '@toverux/blanc-hopital/oxlint/all';
 // Add the framework/environment plugins you use.
 import react from '@toverux/blanc-hopital/oxlint/react';
+import { defineConfig } from 'oxlint';
 
 export default defineConfig({
   extends: [all, react],
