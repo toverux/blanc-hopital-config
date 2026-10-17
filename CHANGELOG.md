@@ -1,5 +1,16 @@
 # Changelog
 
+## [6.0.0](https://github.com/toverux/blanc-hopital-config/compare/v5.0.0...v6.0.0) (2026-10-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* **oxlint, oxfmt:** update to oxlint 1.88, oxfmt 0.73, tsgolint 7.0.2004
+
+### Features
+
+* **oxlint, oxfmt:** update to oxlint 1.88, oxfmt 0.73, tsgolint 7.0.2004 ([1aa33ba](https://github.com/toverux/blanc-hopital-config/commit/1aa33ba55504c0ceea9088995b8a45f14de1bf25))
+
 ## [5.0.0](https://github.com/toverux/blanc-hopital-config/compare/v4.0.0...v5.0.0) (2026-10-12)
 
 
