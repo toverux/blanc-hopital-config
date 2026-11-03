@@ -179,6 +179,8 @@ export default defineConfig({
     'typescript/strict-boolean-expressions': 'off',
 
     // [ UNICORN RULES ]
+    // Only asks for `assert.ok(x)` over `assert(x)`, which strict mode makes the same call.
+    'unicorn/consistent-assert': 'off',
     // I like to put small one-off helpers in the scope even if they don't capture local variables.
     'unicorn/consistent-function-scoping': 'off',
     // Forces you to set an error name property when extending Error.
