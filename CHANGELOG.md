@@ -1,5 +1,12 @@
 # Changelog
 
+## [6.0.1](https://github.com/toverux/blanc-hopital-config/compare/v6.0.0...v6.0.1) (2026-11-03)
+
+
+### Bug Fixes
+
+* **oxlint:** turn off unicorn/consistent-assert, which only asks for assert.ok over the same assert call ([83b3bb8](https://github.com/toverux/blanc-hopital-config/commit/83b3bb891be6ed7ac582bcf48ee26d1e6e015edf))
+
 ## [6.0.0](https://github.com/toverux/blanc-hopital-config/compare/v5.0.0...v6.0.0) (2026-10-17)
 
 
