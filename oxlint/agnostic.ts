@@ -19,7 +19,9 @@ export default defineConfig({
         ignoreConsecutiveComments: true,
         ignoreInlineComments: true,
         // `noinspection`: JetBrains static analyzer suppression comments.
-        ignorePattern: '^noinspection'
+        // No `^`: the rule anchors the pattern itself, and in ESLint and `bun lint` a `^` of its own
+        // never matches past the space after `//`.
+        ignorePattern: 'noinspection'
       }
     ],
     // I'm torn. I kinda want it, but it tends to be annoying too. I prefer to make a method static
