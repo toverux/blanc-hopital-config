@@ -1,5 +1,21 @@
 # Changelog
 
+## [7.0.0](https://github.com/toverux/blanc-hopital-config/compare/v6.0.1...v7.0.0) (2026-11-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* **oxlint, oxfmt:** update to oxlint 1.91, oxfmt 0.76, tsgolint 7.0.2006
+
+### Features
+
+* **oxlint, oxfmt:** update to oxlint 1.91, oxfmt 0.76, tsgolint 7.0.2006 ([87746bd](https://github.com/toverux/blanc-hopital-config/commit/87746bd311a92de73fd2e9afb361d4e3829ddbce))
+
+
+### Bug Fixes
+
+* **oxlint:** match noinspection comments with an unanchored capitalized-comments pattern, which bun lint and ESLint also honor ([e68a639](https://github.com/toverux/blanc-hopital-config/commit/e68a63965ae4a9e13bb2a52c79b7a088214fffc6))
+
 ## [6.0.1](https://github.com/toverux/blanc-hopital-config/compare/v6.0.0...v6.0.1) (2026-11-03)
 
 
